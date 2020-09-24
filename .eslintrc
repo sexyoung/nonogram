@@ -1,0 +1,17 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "semi": "error",
+    "no-extra-semi": "error",
+    "indent": ["error", 2],
+    "no-trailing-spaces": "error",
+    "space-before-blocks": "error",
+    "prefer-const": "error",
+    "no-var": "error",
+    "react/self-closing-comp": "error",
+    "spaced-comment": ["error", "always", { "block": { "balanced": true } }]
+  }
+}
