@@ -1,19 +1,30 @@
 import React from 'react';
+import { useResize } from 'hooks';
 
 import style from './style.module.scss';
 
 type BitData = number[];
 
 interface NonogramPropsType {
-  rowData: BitData[],
-  columnData: BitData[],
+  widthData: BitData[],
+  heightData: BitData[],
 }
 
 type Props = NonogramPropsType;
 
-const Nonogram: React.FunctionComponent<Props> = () => {
+const Nonogram: React.FunctionComponent<Props> = ({
+  widthData,
+  heightData,
+}) => {
+  const [ width, height ] = useResize({
+    widthLen: widthData.length,
+    heightLen: heightData.length,
+  });
   return (
-    <div className={style.Nonogram}>
+    <div
+      style={{ width, height }}
+      className={style.Nonogram}
+    >
       nonogram
     </div>
   );

@@ -3,19 +3,18 @@ import style from './App.module.scss';
 
 import Nonogram from 'components/Nonogram';
 
-const rowData = [
+const widthData = [
   [4],
   [4],
   [2,1],
   [5],
   [4],
 ];
-const columnData = [
+const heightData = [
   [1,3],
   [5],
   [2,2],
-  [5],
-  [1,1],
+
 ];
 
 function App() {
@@ -23,8 +22,8 @@ function App() {
     <div className={style.App}>
       <Nonogram
         {...{
-          rowData,
-          columnData,
+          widthData,
+          heightData,
         }}
       />
     </div>
