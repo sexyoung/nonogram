@@ -14,7 +14,8 @@ const heightData = [
   [1,3],
   [5],
   [2,2],
-
+  [5],
+  [1,1],
 ];
 
 function App() {

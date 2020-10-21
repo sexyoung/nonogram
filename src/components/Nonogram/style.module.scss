@@ -1,3 +1,25 @@
 .Nonogram {
-  background-color: #ff0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+
+  .firstRow {
+    display: flex;
+  }
+  .empty {
+
+  }
+  .horizontalInfo {
+    background-color: #0f0;
+  }
+  .secondRow {
+    display: flex;
+  }
+  .verticalInfo {
+    background-color: #ff0;
+  }
+  .matrix {
+
+  }
+
 }
