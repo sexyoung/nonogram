@@ -5,17 +5,17 @@ const get2Size: d.Get2SizeFunc = params => {
   return {
     wBaseSize: {
       width: params.borderW,
-      height: params.borderW / params.widthLen * params.heightLen,
+      height: params.borderW / params.hLen * params.vLen,
     },
     hBaseSize: {
-      width: params.borderH / params.heightLen * params.widthLen,
+      width: params.borderH / params.vLen * params.hLen,
       height: params.borderH,
     },
   }
 }
 
 export const useResize: d.UseResizeFunc = (
-  { widthLen ,heightLen }: d.UseResizeProps
+  { hLen ,vLen }: d.UseResizeProps
 ): number[] => {
   const [size, setSize] = useState([0, 0]);
   useEffect(() => {
@@ -35,8 +35,8 @@ export const useResize: d.UseResizeFunc = (
       const { wBaseSize, hBaseSize } = get2Size({
         borderW,
         borderH,
-        widthLen,
-        heightLen,
+        hLen,
+        vLen,
       });
 
       if(wBaseSize.width <= borderW && wBaseSize.height <= borderH) {

@@ -1,6 +1,6 @@
 export type BitData = number[];
 
 export interface NonogramPropsType {
-  widthData: BitData[],
-  heightData: BitData[],
+  hData: BitData[],
+  vData: BitData[],
 }

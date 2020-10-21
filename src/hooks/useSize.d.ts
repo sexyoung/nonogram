@@ -1,6 +1,6 @@
 export interface UseResizeProps {
-  widthLen: number;
-  heightLen: number;
+  hLen: number;
+  vLen: number;
 }
 
 export interface UseResizeFunc {
@@ -17,8 +17,8 @@ export interface Get2SizeFunc {
     params: {
       borderW: number;
       borderH: number;
-      widthLen: number;
-      heightLen: number;
+      hLen: number;
+      vLen: number;
     }
   ): {
     hBaseSize: Rectangle;
