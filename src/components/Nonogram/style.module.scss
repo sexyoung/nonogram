@@ -10,7 +10,16 @@
 
   }
   .horizontalInfo {
+    display: flex;
     background-color: #0f0;
+    .hBitList {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      .bit {
+        flex: 1;
+      }
+    }
   }
   .secondRow {
     display: flex;
