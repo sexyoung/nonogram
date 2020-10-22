@@ -1,0 +1,28 @@
+.BitLine {
+  display: flex;
+  height: 100%;
+  &.horizontal {
+    .Line {
+      flex-direction: column;
+    }
+  }
+  &.vertical {
+    flex-direction: column;
+  }
+  .Line {
+    flex: 1;
+    display: flex;
+    // .horizontal & { // no work?
+    //   flex-direction: column;
+    // }
+    .offset {
+
+    }
+    .BitNumber {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
