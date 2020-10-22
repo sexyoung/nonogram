@@ -10,16 +10,16 @@
 
   }
   .horizontalInfo {
-    background-color: lighten(#0f0, 40%);
+    // background-color: lighten(#0f0, 40%);
   }
   .secondRow {
     display: flex;
   }
   .verticalInfo {
-    background-color: lighten(#ff0, 40%);
+    // background-color: lighten(#ff0, 40%);
   }
-  .matrix {
-
+  .matrixBlock {
+    display: flex;
   }
 
 }

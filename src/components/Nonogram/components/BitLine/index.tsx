@@ -13,7 +13,6 @@ export const longestLen = (data: BitData[]) =>
 
 export const BitLine: React.FunctionComponent<Props> = ({ data, direction }) => {
   const maxLen = longestLen(data);
-  
   return (
     <div className={cx(
       style.BitLine, {

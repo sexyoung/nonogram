@@ -41,15 +41,11 @@ resetData();
 const Nonogram: React.FunctionComponent<Props> = ({
   matrixData,
 }) => {
-
   useEffect(() => {
-
     hData = [...Array(matrixData[0].length).keys()].map(index =>
       flatSum(matrixData.map(row => row[index]))
     );
-
     vData = matrixData.map(flatSum);
-
     vMaxLen = longestLen(vData);
     hMaxLen = longestLen(hData);
     col1Style = { flex: vMaxLen }
@@ -62,6 +58,8 @@ const Nonogram: React.FunctionComponent<Props> = ({
     vLen: vData.length + hMaxLen,
   });
 
+  if(!width || !height) return null;
+  
   return (
     <div
       style={{ width, height }}
@@ -77,7 +75,7 @@ const Nonogram: React.FunctionComponent<Props> = ({
         <div className={style.verticalInfo} style={col1Style}>
           <BitLine data={vData} direction={'vertical'} />
         </div>
-        <div className={style.matrix} style={col2Style}>
+        <div className={style.matrixBlock} style={col2Style}>
           <Matrix {...{
             data: matrixData
           }} />
