@@ -2,12 +2,13 @@ import React from 'react';
 import cx from 'classnames';
 
 import * as d from './index.d';
+import { BitData } from 'components/Nonogram/index.d';
 
 import style from './style.module.scss';
 
-type Props = d.BitLinePropsType;
+type Props = d.BitLinePropsType<BitData>;
 
-export const longestLen = (data: d.BitData[]) =>
+export const longestLen = (data: BitData[]) =>
   Math.max(...data.map(arr => arr.length));
 
 export const BitLine: React.FunctionComponent<Props> = ({ data, direction }) => {
@@ -35,5 +36,3 @@ export const BitLine: React.FunctionComponent<Props> = ({ data, direction }) => 
     </div>
   )
 }
-
-export default BitLine;

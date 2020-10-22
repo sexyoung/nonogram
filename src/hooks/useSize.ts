@@ -25,6 +25,9 @@ export const useResize: d.UseResizeFunc = (
     function resize() {
       let width = 0;
       let height = 0;
+
+      if(!hLen || !vLen) return setSize([0, 0]);
+
       const {
         innerWidth: borderW,
         innerHeight: borderH,
@@ -33,10 +36,10 @@ export const useResize: d.UseResizeFunc = (
       // 取得以寬、以高為基礎的寬高
       // 取寬高都小於視窗的size
       const { wBaseSize, hBaseSize } = get2Size({
-        borderW,
-        borderH,
         hLen,
         vLen,
+        borderW,
+        borderH,
       });
 
       if(wBaseSize.width <= borderW && wBaseSize.height <= borderH) {
@@ -46,7 +49,6 @@ export const useResize: d.UseResizeFunc = (
         width = hBaseSize.width;
         height = hBaseSize.height;
       }
-
       if(curWidth !== width || curHeight !== height) {
         setSize([ width, height ]);
         curWidth = width;
@@ -56,6 +58,6 @@ export const useResize: d.UseResizeFunc = (
     window.addEventListener('resize', resize);
     resize();
     return () => window.removeEventListener('resize', resize);
-  }, []);
+  }, [hLen, vLen]);
   return size;
 }

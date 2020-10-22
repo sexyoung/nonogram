@@ -1,8 +1,6 @@
-export type BitData = number[];
-
 export type Direction = 'horizontal' | 'vertical';
 
-export interface BitLinePropsType {
-  data: BitData[];
+export interface BitLinePropsType<T> {
+  data: T[];
   direction: Direction;
 }

@@ -1,32 +1,67 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useResize } from 'hooks';
 import * as d from './index.d';
 
-import BitLine, { longestLen } from './components/BitLine';
+import {
+  Matrix,
+  BitLine,
+  longestLen,
+} from './components';
 
 import style from './style.module.scss';
 
 type Props = d.NonogramPropsType;
 
+// 這些資料通常是 matrixData 有更新的才會跟著一起變
+let vMaxLen: number;
+let hMaxLen: number;
+let col1Style: object;
+let col2Style: object;
+let hData: d.BitData[];
+let vData: d.BitData[];
+
+const resetData = () => {
+  hData = [];
+  vData = [];
+  vMaxLen = 0;
+  hMaxLen = 0;
+  col1Style = {};
+  col2Style = {};
+}
+
+export const flatSum = (arr: number[]) =>
+  arr.join("")
+  .replace(/00/g, '0')
+  .split("0")
+  .map(s => s.length)
+  .filter(v => v);
+
+resetData();
+
 const Nonogram: React.FunctionComponent<Props> = ({
-  hData,
-  vData,
+  matrixData,
 }) => {
 
-  // TODO: 這四個傢伙只需要跑一次就好，有什麼優化辦法嗎
-  const vMaxLen = longestLen(vData);
-  const hMaxLen = longestLen(hData);
-  const col1Style = { flex: vMaxLen }
-  const col2Style = { flex: hData.length }
+  useEffect(() => {
+
+    hData = [...Array(matrixData[0].length).keys()].map(index =>
+      flatSum(matrixData.map(row => row[index]))
+    );
+
+    vData = matrixData.map(flatSum);
+
+    vMaxLen = longestLen(vData);
+    hMaxLen = longestLen(hData);
+    col1Style = { flex: vMaxLen }
+    col2Style = { flex: hData.length }
+    return () => resetData();
+  }, [JSON.stringify(matrixData)]);
 
   const [ width, height ] = useResize({
-    hLen: hData.length + hMaxLen,
-    vLen: vData.length + vMaxLen,
+    hLen: hData.length + vMaxLen,
+    vLen: vData.length + hMaxLen,
   });
 
-  // TODO: 如果 width or height 是 0 ，就不應該 render
-  console.log(width, height);
-  
   return (
     <div
       style={{ width, height }}
@@ -43,7 +78,9 @@ const Nonogram: React.FunctionComponent<Props> = ({
           <BitLine data={vData} direction={'vertical'} />
         </div>
         <div className={style.matrix} style={col2Style}>
-          matrix how do it?
+          <Matrix {...{
+            data: matrixData
+          }} />
         </div>
       </div>
     </div>
