@@ -1,7 +1,10 @@
 import React from 'react';
 import style from './App.module.scss';
 
-import Nonogram from 'components/Nonogram';
+import {
+  SignTool,
+  Nonogram,
+} from 'components';
 
 const matrixData = [
   [0, 1, 0, 1, 0],
@@ -19,6 +22,7 @@ function App() {
           matrixData,
         }}
       />
+      <SignTool />
     </div>
   );
 }

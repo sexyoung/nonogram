@@ -38,7 +38,7 @@ export const flatSum = (arr: number[]) =>
 
 resetData();
 
-const Nonogram: React.FunctionComponent<Props> = ({
+export const Nonogram: React.FunctionComponent<Props> = ({
   matrixData,
 }) => {
   useEffect(() => {
@@ -84,5 +84,3 @@ const Nonogram: React.FunctionComponent<Props> = ({
     </div>
   );
 }
-
-export default Nonogram;

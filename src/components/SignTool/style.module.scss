@@ -1,0 +1,12 @@
+.SignTool {
+  margin-top: 10px;
+  input[type=radio] {
+    display: none;
+    &:checked+label {
+      font-weight: bold;
+    }
+  }
+  label:first-of-type {
+    margin-right: 20px;
+  }
+}
