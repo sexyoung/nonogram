@@ -1,4 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+
+import { set } from 'actions';
+
+import { BitData } from 'components/Nonogram/index.d';
+
 import style from './App.module.scss';
 
 import {
@@ -14,7 +20,12 @@ const matrixData = [
   [0, 0, 1, 0, 0],
 ];
 
-function App() {
+function App(props: any) {
+
+  useEffect(() => {
+    props.set(matrixData.map(row => Array(row.length).fill(0)));
+  }, [])
+
   return (
     <div className={style.App}>
       <Nonogram
@@ -27,4 +38,8 @@ function App() {
   );
 }
 
-export default App;
+const mapDispatch2Props = (dispatch: any) => ({
+  set: (data: BitData[]) => dispatch(set(data)),
+});
+
+export default connect(null, mapDispatch2Props)(App);

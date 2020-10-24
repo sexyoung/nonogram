@@ -1,3 +1,6 @@
 export interface MatrixPropsType<T> {
-  data: T[]
+  data: T[];
+  mark?: any;
+  martrix?: any;
+  sign?: any;
 }
