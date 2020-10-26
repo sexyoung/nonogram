@@ -2,14 +2,14 @@ import cx from 'classnames';
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
+import { RootState } from 'reducers';
 import { mark, SIGN } from 'actions';
 
-import * as d from './index.d';
-import { BitData } from 'components/Nonogram/index.d';
+import { Props, DispatchParams } from './index.d';
 
 import style from './style.module.scss';
 
-type Props = d.MatrixPropsType<BitData>;
+// type Props = Props<BitData>;
 
 export const _Matrix: React.FunctionComponent<Props> = ({ data, mark, martrix, sign }: Props) => {
   
@@ -30,7 +30,7 @@ export const _Matrix: React.FunctionComponent<Props> = ({ data, mark, martrix, s
     }
   }
 
-  const handleMove = (e: any) => {
+  const handleMove = (e: React.TouchEvent) => {
     const DOM = document.elementFromPoint(
       e.touches[0].clientX,
       e.touches[0].clientY
@@ -60,7 +60,7 @@ export const _Matrix: React.FunctionComponent<Props> = ({ data, mark, martrix, s
     <div className={style.Matrix}>
       {data.map((row, x) =>
         <div key={x} className={style.row}>
-          {row.map((col, y) =>
+          {row.map((col: number, y: number) =>
             <div
               data-x={x}
               data-y={y}
@@ -83,13 +83,13 @@ export const _Matrix: React.FunctionComponent<Props> = ({ data, mark, martrix, s
   )
 }
 
-const mapState2Props = (state: any) => ({
+const mapState2Props = (state: RootState) => ({
   sign: state.sign,
   martrix: state.martrix,
 });
 
-const mapDispatch2Props = (dispatch: any) => ({
-  mark: (payload: any) => dispatch(mark(payload)),
-});
+const mapDispatch2Props = {
+  mark: (payload: DispatchParams) => mark(payload),
+}
 
 export const Matrix = connect(mapState2Props, mapDispatch2Props)(_Matrix);
