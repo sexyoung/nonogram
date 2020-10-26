@@ -1,17 +1,15 @@
 import React from 'react';
 import { connect } from "react-redux";
 
+import { RootState } from 'reducers';
 import { changeSign, SIGN } from 'actions';
+import { Props } from './type';
 
 import style from './style.module.scss';
 
-interface Props {
-  changeSign: any;
-}
-
 export const _SignTool: React.FunctionComponent<Props> = ({ changeSign }) => {
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     changeSign(+e.target.value);
   }
 
@@ -38,12 +36,15 @@ export const _SignTool: React.FunctionComponent<Props> = ({ changeSign }) => {
     )
 }
 
-const mapState2Props = (state: any) => ({
+const mapState2Props = (state: RootState) => ({
   sign: state.sign,
 })
 
-const mapDispatch2Props = (dispatch: any) => ({
-  changeSign: (payload: any) => dispatch(changeSign(payload)),
-})
+const mapDispatch2Props = {
+  changeSign: (payload: SIGN) => changeSign(payload),
+}
 
-export const SignTool = connect(mapState2Props, mapDispatch2Props)(_SignTool);
+export const SignTool = connect(
+  mapState2Props,
+  mapDispatch2Props
+)(_SignTool);
