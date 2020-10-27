@@ -1,45 +1,26 @@
-import { connect } from 'react-redux';
-import React, { useEffect } from 'react';
+import {
+  Link,
+  Route,
+  Switch,
+  BrowserRouter,
+} from "react-router-dom";
+import React from 'react';
 
-import { set } from 'actions';
-
-import { Props } from './type';
+import {
+  NonogramPage,
+} from "pages";
 
 import style from './App.module.scss';
 
-import {
-  SignTool,
-  Nonogram,
-} from 'components';
-
-const matrixData = [
-  [0, 1, 0, 1, 0],
-  [1, 1, 1, 1, 1],
-  [1, 1, 1, 1, 1],
-  [0, 1, 1, 1, 0],
-  [0, 0, 1, 0, 0],
-];
-
-function App(props: Props) {
-
-  useEffect(() => {
-    props.set(matrixData.map(row => Array(row.length).fill(0)));
-  }, [props]);
-
+export default function App() {
   return (
     <div className={style.App}>
-      <Nonogram
-        {...{
-          matrixData,
-        }}
-      />
-      <SignTool />
+      <BrowserRouter>
+        <Switch>
+          {/* <Route exact path="/"></Route> */}
+          <Route exact path="/game"><NonogramPage /></Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
-
-const mapDispatch2Props = {
-  set,
-}
-
-export default connect(null, mapDispatch2Props)(App);

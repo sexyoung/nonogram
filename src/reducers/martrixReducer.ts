@@ -6,7 +6,15 @@ import {
   MatrixActionTypes,
 } from 'actions';
 
-const martrixReducer = (state = [], action: MatrixActionTypes) => {
+const initData = [
+  [0, 1, 0, 1, 0],
+  [1, 1, 1, 1, 1],
+  [1, 1, 0, 1, 1],
+  [0, 1, 1, 1, 0],
+  [0, 0, 1, 0, 0],
+]
+
+const martrixReducer = (state = initData, action: MatrixActionTypes) => {
   switch (action.type) {
   case SET:
     return [...action.payload];
