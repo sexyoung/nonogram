@@ -13,7 +13,7 @@ const initData = [
   [1, 1, 0, 1, 1],
   [0, 1, 1, 1, 0],
   [0, 0, 1, 0, 0],
-]
+];
 
 const martrixReducer = (state = initData, action: MatrixActionTypes) => {
   switch (action.type) {

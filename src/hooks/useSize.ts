@@ -11,8 +11,8 @@ const get2Size: d.Get2SizeFunc = params => {
       width: params.borderH / params.vLen * params.hLen,
       height: params.borderH,
     },
-  }
-}
+  };
+};
 
 export const useResize: d.UseResizeFunc = (
   { hLen ,vLen }: d.UseResizeProps
@@ -32,7 +32,7 @@ export const useResize: d.UseResizeFunc = (
         innerWidth: borderW,
         innerHeight: borderH,
       } = window;
-      
+
       // 取得以寬、以高為基礎的寬高
       // 取寬高都小於視窗的size
       const { wBaseSize, hBaseSize } = get2Size({
@@ -60,4 +60,4 @@ export const useResize: d.UseResizeFunc = (
     return () => window.removeEventListener('resize', resize);
   }, [hLen, vLen]);
   return size;
-}
+};
