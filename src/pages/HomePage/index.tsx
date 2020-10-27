@@ -1,4 +1,8 @@
 import React from 'react';
+import {
+  Link,
+} from "react-router-dom";
+import stages from 'stages';
 
 interface Props {
 
@@ -7,7 +11,13 @@ interface Props {
 export const HomePage = (props: Props) => {
   return (
     <div>
-      這邊有很多關卡可以選擇
+      {Object.keys(stages).map(stage =>
+        <Link
+          to={`/game/${stage}`}
+          key={stage}
+          className="stage"
+        >{stage}&nbsp;</Link>
+      )}
     </div>
   );
 };

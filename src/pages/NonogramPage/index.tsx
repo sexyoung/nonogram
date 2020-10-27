@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
+import { useParams } from "react-router-dom";
 import React, { useEffect } from 'react';
-import stage from 'stages';
+import stages from 'stages';
 import { set } from 'actions';
 
 import {
@@ -12,9 +13,11 @@ import { Props } from './type';
 
 import style from './style.module.scss';
 
-const matrixData = stage.lv2;
-
 const _NonogramPage = (props: Props) => {
+
+  const { lv }: { lv: 'stage1' | 'stage2' } = useParams();
+  // console.log(stages[lv]);
+  const matrixData = stages[lv];
 
   useEffect(() => {
     props.set(matrixData.map(row => Array(row.length).fill(0)));

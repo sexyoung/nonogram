@@ -1,5 +1,4 @@
 import {
-  Link,
   Route,
   Switch,
   BrowserRouter,
