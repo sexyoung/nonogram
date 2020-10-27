@@ -6,7 +6,7 @@ import { RootState } from 'reducers';
 import { mark, SIGN } from 'actions';
 
 import { BitData } from 'type';
-import { Props, DispatchParams } from './type';
+import { Props } from './type';
 
 import style from './style.module.scss';
 
@@ -101,7 +101,7 @@ const mapState2Props = (state: RootState) => ({
 });
 
 const mapDispatch2Props = {
-  mark: (payload: DispatchParams) => mark(payload),
+  mark,
 }
 
 export const Matrix = connect(mapState2Props, mapDispatch2Props)(_Matrix);

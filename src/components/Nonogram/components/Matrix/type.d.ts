@@ -1,4 +1,7 @@
-import { SIGN } from 'actions';
+import {
+  SIGN,
+  DispatchParams,
+} from 'actions';
 import {
   BitData,
   NonogramPropsType,
@@ -13,14 +16,8 @@ interface StateProps {
   martrix: NonogramPropsType;
 }
 
-export interface DispatchParams {
-  x: number,
-  y: number,
-  sign: SIGN,
-}
-
 interface DispatchProps {
-  mark: (payload: DispatchParams) => void
+  mark: (payload: DispatchParams) => void;
 }
 
 export type Props = OwnProps & StateProps & DispatchProps;

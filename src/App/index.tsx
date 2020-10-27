@@ -4,7 +4,6 @@ import React, { useEffect } from 'react';
 import { set } from 'actions';
 
 import { Props } from './type';
-import { BitData } from 'type';
 
 import style from './App.module.scss';
 
@@ -40,7 +39,7 @@ function App(props: Props) {
 }
 
 const mapDispatch2Props = {
-  set: (data: BitData[]) => set(data),
+  set,
 }
 
 export default connect(null, mapDispatch2Props)(App);

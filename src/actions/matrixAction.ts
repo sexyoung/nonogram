@@ -1,8 +1,14 @@
+import { SIGN } from 'actions';
 import { NonogramData } from 'type';
-import { DispatchParams } from 'components/Nonogram/components/Matrix/type'; // 不覺得有點蠢嗎
 
 export const SET = 'SET';
 export const MARK = 'MARK';
+
+export interface DispatchParams {
+  x: number,
+  y: number,
+  sign: SIGN,
+}
 
 interface SetAction {
   type: typeof SET;
