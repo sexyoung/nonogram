@@ -33,5 +33,5 @@ export const BitLine: React.FunctionComponent<Props> = ({ data, direction }) => 
         </div>
       )}
     </div>
-  )
-}
+  );
+};

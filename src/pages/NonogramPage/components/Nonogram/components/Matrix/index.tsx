@@ -11,7 +11,7 @@ import { Props } from './type';
 import style from './style.module.scss';
 
 export const _Matrix: React.FunctionComponent<Props> = ({ data, mark, martrix, sign }: Props) => {
-  
+
   const [x, setX] = useState(-1);
   const [y, setY] = useState(-1);
   const [isErase, setIsErase] = useState(false);
@@ -27,7 +27,7 @@ export const _Matrix: React.FunctionComponent<Props> = ({ data, mark, martrix, s
     } else {
       mark({x, y, sign});
     }
-  }
+  };
 
   const handleMove = (e: React.TouchEvent) => {
     const DOM = document.elementFromPoint(
@@ -49,11 +49,11 @@ export const _Matrix: React.FunctionComponent<Props> = ({ data, mark, martrix, s
         sign: isErase ? SIGN.NONE: sign,
       });
     }
-  }
+  };
 
   const handleEnd = () => {
     setIsErase(false);
-  }
+  };
 
   useEffect(() => {
     const isCorrect = martrix.every((row: BitData, x: number) =>
@@ -65,7 +65,7 @@ export const _Matrix: React.FunctionComponent<Props> = ({ data, mark, martrix, s
     if(isCorrect) {
       console.log('正解');
     }
-    
+
   }, [martrix, data]);
 
   return (
@@ -87,13 +87,13 @@ export const _Matrix: React.FunctionComponent<Props> = ({ data, mark, martrix, s
               onTouchStart={handleStart.bind(this, x, y)}
               onTouchMove={handleMove}
               onTouchEnd={handleEnd}
-            ></div>
+            />
           )}
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
 const mapState2Props = (state: RootState) => ({
   sign: state.sign,
@@ -102,6 +102,6 @@ const mapState2Props = (state: RootState) => ({
 
 const mapDispatch2Props = {
   mark,
-}
+};
 
 export const Matrix = connect(mapState2Props, mapDispatch2Props)(_Matrix);

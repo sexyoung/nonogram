@@ -11,7 +11,7 @@ export const _SignTool: React.FunctionComponent<Props> = ({ changeSign, ...props
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     changeSign(+e.target.value);
-  }
+  };
 
   return (
     <div className={style.SignTool}>
@@ -34,16 +34,16 @@ export const _SignTool: React.FunctionComponent<Props> = ({ changeSign, ...props
       />
       <label htmlFor="cross">× cross</label>
     </div>
-    )
-}
+  );
+};
 
 const mapState2Props = (state: RootState) => ({
   sign: state.sign,
-})
+});
 
 const mapDispatch2Props = {
   changeSign: (payload: SIGN) => changeSign(payload),
-}
+};
 
 export const SignTool = connect(
   mapState2Props,

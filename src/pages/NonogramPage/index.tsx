@@ -46,12 +46,12 @@ const _NonogramPage = (props: Props) => {
       />
       <SignTool />
     </div>
-  )
-}
+  );
+};
 
 
 const mapDispatch2Props = {
   set,
-}
+};
 
 export const NonogramPage = connect(null, mapDispatch2Props)(_NonogramPage);

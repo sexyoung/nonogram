@@ -27,14 +27,14 @@ const resetData = () => {
   hMaxLen = 0;
   col1Style = {};
   col2Style = {};
-}
+};
 
 export const flatSum = (arr: number[]) =>
   arr.join("")
-  .replace(/00/g, '0')
-  .split("0")
-  .map(s => s.length)
-  .filter(v => v);
+    .replace(/00/g, '0')
+    .split("0")
+    .map(s => s.length)
+    .filter(v => v);
 
 resetData();
 
@@ -48,8 +48,8 @@ export const Nonogram: React.FunctionComponent<Props> = ({
     vData = matrixData.map(flatSum);
     vMaxLen = longestLen(vData);
     hMaxLen = longestLen(hData);
-    col1Style = { flex: vMaxLen }
-    col2Style = { flex: hData.length }
+    col1Style = { flex: vMaxLen };
+    col2Style = { flex: hData.length };
     return () => resetData();
   }, [matrixData]);
 
@@ -59,14 +59,14 @@ export const Nonogram: React.FunctionComponent<Props> = ({
   });
 
   if(!width || !height) return null;
-  
+
   return (
     <div
       style={{ width, height }}
       className={style.Nonogram}
     >
       <div className={style.firstRow} style={{flex: hMaxLen}}>
-        <div className={style.empty} style={col1Style}></div>
+        <div className={style.empty} style={col1Style} />
         <div className={style.horizontalInfo} style={col2Style}>
           <BitLine data={hData} direction={'horizontal'} />
         </div>
@@ -83,4 +83,4 @@ export const Nonogram: React.FunctionComponent<Props> = ({
       </div>
     </div>
   );
-}
+};
