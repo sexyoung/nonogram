@@ -6,7 +6,6 @@ export enum SIGN {
 
 export const CHANGE_SIGN = 'CHANGE_SIGN';
 
-// src/store/chat/types.ts
 interface ChangeSignAction {
   type: typeof CHANGE_SIGN;
   payload: SIGN

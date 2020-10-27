@@ -1,10 +1,11 @@
 import cx from 'classnames';
-import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import React, { useState, useEffect } from 'react';
 
 import { RootState } from 'reducers';
 import { mark, SIGN } from 'actions';
 
+import { BitData } from 'type';
 import { Props, DispatchParams } from './type';
 
 import style from './style.module.scss';
@@ -54,11 +55,24 @@ export const _Matrix: React.FunctionComponent<Props> = ({ data, mark, martrix, s
     setIsErase(false);
   }
 
+  useEffect(() => {
+    const isCorrect = martrix.every((row: BitData, x: number) =>
+      [...row.keys()].every(y =>
+        martrix[x][y] === data[x][y]
+      )
+    );
+
+    if(isCorrect) {
+      console.log('正解');
+    }
+    
+  }, [martrix, data]);
+
   return (
     <div className={style.Matrix}>
       {data.map((row, x) =>
         <div key={x} className={style.row}>
-          {row.map((col: number, y: number) =>
+          {[...row.keys()].map((y: number) =>
             <div
               data-x={x}
               data-y={y}

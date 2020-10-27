@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import React, { useEffect } from 'react';
 
 import { set } from 'actions';
 
@@ -25,7 +25,7 @@ function App(props: Props) {
 
   useEffect(() => {
     props.set(matrixData.map(row => Array(row.length).fill(0)));
-  }, [props])
+  }, [props]);
 
   return (
     <div className={style.App}>

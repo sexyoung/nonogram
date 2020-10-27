@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useResize } from 'hooks';
-import * as d from './type';
+import * as d from 'type';
 
 import {
   Matrix,

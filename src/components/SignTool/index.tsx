@@ -7,7 +7,7 @@ import { Props } from './type';
 
 import style from './style.module.scss';
 
-export const _SignTool: React.FunctionComponent<Props> = ({ changeSign }) => {
+export const _SignTool: React.FunctionComponent<Props> = ({ changeSign, ...props }) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     changeSign(+e.target.value);
@@ -17,19 +17,20 @@ export const _SignTool: React.FunctionComponent<Props> = ({ changeSign }) => {
     <div className={style.SignTool}>
       <input
         id="check"
-        type="radio"
         name="sign"
+        type="radio"
         value={SIGN.CHECK}
         onChange={handleChange}
-        defaultChecked
+        checked={props.sign === SIGN.CHECK}
       />
       <label htmlFor="check">✓ check</label>
       <input
         id="cross"
-        type="radio"
         name="sign"
+        type="radio"
         value={SIGN.CROSS}
         onChange={handleChange}
+        checked={props.sign === SIGN.CROSS}
       />
       <label htmlFor="cross">× cross</label>
     </div>
