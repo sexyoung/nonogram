@@ -5,11 +5,9 @@ import { connect } from 'react-redux';
 import { RootState } from 'reducers';
 import { mark, SIGN } from 'actions';
 
-import { Props, DispatchParams } from './index.d';
+import { Props, DispatchParams } from './type';
 
 import style from './style.module.scss';
-
-// type Props = Props<BitData>;
 
 export const _Matrix: React.FunctionComponent<Props> = ({ data, mark, martrix, sign }: Props) => {
   

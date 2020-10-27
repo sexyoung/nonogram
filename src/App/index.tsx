@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 
 import { set } from 'actions';
 
-import { BitData } from 'components/Nonogram/index.d';
+import { Props } from './type';
+import { BitData } from 'components/Nonogram/type';
 
 import style from './App.module.scss';
 
@@ -20,11 +21,11 @@ const matrixData = [
   [0, 0, 1, 0, 0],
 ];
 
-function App(props: any) {
+function App(props: Props) {
 
   useEffect(() => {
     props.set(matrixData.map(row => Array(row.length).fill(0)));
-  }, [])
+  }, [props])
 
   return (
     <div className={style.App}>
@@ -38,8 +39,8 @@ function App(props: any) {
   );
 }
 
-const mapDispatch2Props = (dispatch: any) => ({
-  set: (data: BitData[]) => dispatch(set(data)),
-});
+const mapDispatch2Props = {
+  set: (data: BitData[]) => set(data),
+}
 
 export default connect(null, mapDispatch2Props)(App);

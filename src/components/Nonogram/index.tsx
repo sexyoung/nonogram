@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useResize } from 'hooks';
-import * as d from './index.d';
+import * as d from './type';
 
 import {
   Matrix,
@@ -51,7 +51,7 @@ export const Nonogram: React.FunctionComponent<Props> = ({
     col1Style = { flex: vMaxLen }
     col2Style = { flex: hData.length }
     return () => resetData();
-  }, [JSON.stringify(matrixData)]);
+  }, [matrixData]);
 
   const [ width, height ] = useResize({
     hLen: hData.length + vMaxLen,
