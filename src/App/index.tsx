@@ -7,7 +7,9 @@ import {
 import React from 'react';
 
 import {
+  HomePage,
   NonogramPage,
+  NotFoundPage,
 } from "pages";
 
 import style from './App.module.scss';
@@ -17,8 +19,9 @@ export default function App() {
     <div className={style.App}>
       <BrowserRouter>
         <Switch>
-          {/* <Route exact path="/"></Route> */}
-          <Route exact path="/game"><NonogramPage /></Route>
+          <Route exact path="/"><HomePage /></Route>
+          <Route exact path="/game/:lv"><NonogramPage /></Route>
+          <Route path="*"><NotFoundPage /></Route>
         </Switch>
       </BrowserRouter>
     </div>

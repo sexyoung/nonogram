@@ -33,9 +33,9 @@ const matrixData = [
 
 const _NonogramPage = (props: Props) => {
 
-  useEffect(() => {
-    props.set(matrixData.map(row => Array(row.length).fill(0)));
-  }, [props]);
+  // useEffect(() => {
+  //   props.set(matrixData.map(row => Array(row.length).fill(0)));
+  // }, [props]);
 
   return (
     <div className={style.NonogramPage}>
