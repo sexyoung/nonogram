@@ -1,4 +1,4 @@
-export type BitData = number[];
+export { BitData } from 'type';
 
 export interface NonogramPropsType {
   matrixData: BitData[];

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { set } from 'actions';
 
 import { Props } from './type';
-import { BitData } from 'components/Nonogram/type';
+import { BitData } from 'type';
 
 import style from './App.module.scss';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 
 import * as d from './index.d';
-import { BitData } from 'components/Nonogram/type';
+import { BitData } from 'type';
 
 import style from './style.module.scss';
 
