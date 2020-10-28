@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { useParams } from "react-router-dom";
 import React, { useEffect } from 'react';
-import stages from 'stages';
+import stages, { StageType } from 'stages';
 import { set } from 'actions';
 
 import {
@@ -15,13 +15,13 @@ import style from './style.module.scss';
 
 const _NonogramPage = (props: Props) => {
 
-  const { lv }: { lv: 'stage1' | 'stage2' } = useParams();
-  // console.log(stages[lv]);
+  const { lv }: { lv: StageType } = useParams();
+
   const matrixData = stages[lv];
 
   useEffect(() => {
     props.set(matrixData.map(row => Array(row.length).fill(0)));
-  }, [props]);
+  }, [props, matrixData]);
 
   return (
     <div className={style.NonogramPage}>

@@ -1,0 +1,19 @@
+.HomePage {
+  .header {
+    font-size: 1.5rem;
+    padding: 20px 0;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+  .stage {
+    width: 25%;
+    padding: 15px 0;
+    background: #fff;
+    text-align: center;
+    display: inline-block;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+    color: #000;
+  }
+}
