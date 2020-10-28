@@ -3,14 +3,20 @@ import { connect } from 'react-redux';
 import React, { useState, useEffect } from 'react';
 
 import { RootState } from 'reducers';
-import { mark, SIGN } from 'actions';
+import { mark, setStatus, SIGN, STATUS } from 'actions';
 
 import { BitData } from 'type';
 import { Props } from './type';
 
 import style from './style.module.scss';
 
-export const _Matrix: React.FunctionComponent<Props> = ({ data, mark, martrix, sign }: Props) => {
+export const _Matrix: React.FunctionComponent<Props> = ({
+  mark,
+  data,
+  sign,
+  martrix,
+  setStatus,
+}: Props) => {
 
   const [x, setX] = useState(-1);
   const [y, setY] = useState(-1);
@@ -58,16 +64,19 @@ export const _Matrix: React.FunctionComponent<Props> = ({ data, mark, martrix, s
   useEffect(() => {
     const isCorrect = martrix.every((row: BitData, x: number) =>
       [...row.keys()].every(y =>
-        martrix[x][y] === data[x][y]
+        martrix[x][y] === SIGN.CHECK ?
+          martrix[x][y] === data[x][y]:
+          data[x][y] !==  SIGN.CHECK
       )
     );
 
     if(isCorrect) {
-      console.log('正解');
+      setStatus(STATUS.WIN);
     }
 
   }, [martrix, data]);
 
+  // data 是題目，matrix 是作答
   return (
     <div className={style.Matrix}>
       {data.map((row, x) =>
@@ -102,6 +111,7 @@ const mapState2Props = (state: RootState) => ({
 
 const mapDispatch2Props = {
   mark,
+  setStatus,
 };
 
 export const Matrix = connect(mapState2Props, mapDispatch2Props)(_Matrix);

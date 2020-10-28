@@ -1,5 +1,6 @@
 import {
   SIGN,
+  STATUS,
   DispatchParams,
 } from 'actions';
 import {
@@ -17,6 +18,7 @@ interface StateProps {
 }
 
 interface DispatchProps {
+  setStatus: (status: STATUS) => void;
   mark: (payload: DispatchParams) => void;
 }
 

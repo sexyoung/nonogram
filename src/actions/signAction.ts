@@ -13,7 +13,7 @@ interface ChangeSignAction {
 
 export type ChatActionTypes = ChangeSignAction;
 
-export const changeSign = (payload: SIGN): ChatActionTypes => ({
+export const changeSign = (payload: SIGN): ChangeSignAction => ({
   type: CHANGE_SIGN,
-  payload
+  payload,
 });

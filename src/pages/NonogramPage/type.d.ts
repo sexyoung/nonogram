@@ -1,9 +1,21 @@
 import {
+  STATUS,
+} from 'actions';
+
+import {
   BitData,
 } from 'components/Nonogram/type';
 
-interface DispatchProps {
-  set: (payload: BitData[]) => void
+interface StateProps {
+  time: number;
+  status: STATUS;
 }
 
-export type Props = DispatchProps;
+interface DispatchProps {
+  setTime: (t: number) => void,
+  tickTime: () => void,
+  setStatus: (status: STATUS) => void,
+  set: (payload: BitData[]) => void,
+}
+
+export type Props = StateProps & DispatchProps;

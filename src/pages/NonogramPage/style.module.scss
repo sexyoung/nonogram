@@ -8,4 +8,42 @@
   justify-content: center;
   // border: 10px solid red;
   height: -webkit-fill-available;
+  .header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    border-bottom: 1px solid #eee;
+    .lv {
+      display: flex;
+      padding: 0 10px;
+      font-weight: bold;
+      width: fit-content;
+      align-items: center;
+    }
+    .time {
+      flex: 1;
+      display: flex;
+      padding: 0 10px;
+      align-items: center;
+    }
+    .pause {
+      width: 35px;
+      height: 35px;
+      display: flex;
+      padding: 6px;
+      box-sizing: border-box;
+      background-color: #eee;
+      justify-content: space-around;
+
+      &:before, &:after {
+        content: '';
+        width: 6px;
+        display: block;
+        border-radius: 6px;
+        background-color: #ccc;
+      }
+    }
+  }
 }
