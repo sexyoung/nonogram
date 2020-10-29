@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/nonogram/static/css/main.eb90f0dc.chunk.css",
-    "main.js": "/nonogram/static/js/main.2b3f3400.chunk.js",
-    "main.js.map": "/nonogram/static/js/main.2b3f3400.chunk.js.map",
+    "main.js": "/nonogram/static/js/main.777550c9.chunk.js",
+    "main.js.map": "/nonogram/static/js/main.777550c9.chunk.js.map",
     "runtime-main.js": "/nonogram/static/js/runtime-main.c6919c89.js",
     "runtime-main.js.map": "/nonogram/static/js/runtime-main.c6919c89.js.map",
-    "static/js/2.a9c01502.chunk.js": "/nonogram/static/js/2.a9c01502.chunk.js",
-    "static/js/2.a9c01502.chunk.js.map": "/nonogram/static/js/2.a9c01502.chunk.js.map",
+    "static/js/2.03eff527.chunk.js": "/nonogram/static/js/2.03eff527.chunk.js",
+    "static/js/2.03eff527.chunk.js.map": "/nonogram/static/js/2.03eff527.chunk.js.map",
     "index.html": "/nonogram/index.html",
-    "precache-manifest.fd668273c8a5787fdb5f36e18e1cc4d3.js": "/nonogram/precache-manifest.fd668273c8a5787fdb5f36e18e1cc4d3.js",
+    "precache-manifest.ec165bffcd5e5ff43335950bf931cdec.js": "/nonogram/precache-manifest.ec165bffcd5e5ff43335950bf931cdec.js",
     "service-worker.js": "/nonogram/service-worker.js",
     "static/css/main.eb90f0dc.chunk.css.map": "/nonogram/static/css/main.eb90f0dc.chunk.css.map",
-    "static/js/2.a9c01502.chunk.js.LICENSE.txt": "/nonogram/static/js/2.a9c01502.chunk.js.LICENSE.txt"
+    "static/js/2.03eff527.chunk.js.LICENSE.txt": "/nonogram/static/js/2.03eff527.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c6919c89.js",
-    "static/js/2.a9c01502.chunk.js",
+    "static/js/2.03eff527.chunk.js",
     "static/css/main.eb90f0dc.chunk.css",
-    "static/js/main.2b3f3400.chunk.js"
+    "static/js/main.777550c9.chunk.js"
   ]
 }
