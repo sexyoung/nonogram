@@ -26,7 +26,7 @@ const stages = {
   stage2,
   stage3,
   stage4,
-  stage5,
+  // stage5,
   // stage6,
   // stage7,
   // stage8,

@@ -107,6 +107,7 @@ const _NonogramPage = ({
       {isWin &&
         <PopWin
           onNext={handleNext}
+          matrixData={stages[lv]}
           onRestart={handleRestart}
           onBackMenu={handleBackMenu}
         />
