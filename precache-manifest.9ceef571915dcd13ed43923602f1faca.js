@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "87a478a3536e7ccbc2262150bd720959",
+    "revision": "f4d789126a50077bebb2aafce8136961",
     "url": "/nonogram/index.html"
   },
   {
