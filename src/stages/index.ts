@@ -4,9 +4,9 @@ import stage2 from './2.json';
 import stage3 from './3.json';
 import stage4 from './4.json';
 import stage5 from './5.json';
-// import stage6 from './6.json';
-// import stage7 from './7.json';
-// import stage8 from './8.json';
+import stage6 from './6.json';
+import stage7 from './7.json';
+import stage8 from './8.json';
 // import stage9 from './9.json';
 // import stage10 from './10.json';
 // import stage11 from './11.json';
@@ -26,10 +26,10 @@ const stages = {
   stage2,
   stage3,
   stage4,
-  // stage5,
-  // stage6,
-  // stage7,
-  // stage8,
+  stage5,
+  stage6,
+  stage7,
+  stage8,
   // stage9,
   // stage10,
   // stage11,
