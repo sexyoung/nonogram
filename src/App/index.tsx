@@ -1,7 +1,7 @@
 import {
   Route,
   Switch,
-  BrowserRouter,
+  HashRouter,
 } from "react-router-dom";
 import React from 'react';
 
@@ -16,13 +16,13 @@ import style from './App.module.scss';
 export default function App() {
   return (
     <div className={style.App}>
-      <BrowserRouter>
+      <HashRouter>
         <Switch>
           <Route exact path="/"><HomePage /></Route>
           <Route exact path="/game/:lv"><NonogramPage /></Route>
           <Route path="*"><NotFoundPage /></Route>
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
